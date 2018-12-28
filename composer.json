@@ -1,0 +1,19 @@
+{
+    "name": "varunransubhe/calculator",
+    "description": "PHP Calculator",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Varun Ransubhe",
+            "email": "varunransubhe12@gmail.com"
+        }
+    ],
+    "autoload": {
+        "psr-4": {"EE\\": "src/EE"}
+    },
+
+    "require": {
+        "symfony/console": "^3.4"
+    }
+}
