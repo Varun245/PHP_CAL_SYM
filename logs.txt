@@ -1,0 +1,36 @@
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : add
+Numbers : 4,5
+Answer : 9
+
+Operation : mul
+Numbers : 4,5
+Answer : 20
+
+Operation : mul
+Numbers : 4,5
+Answer : 20
+
+Operation : mul
+Numbers : 4,5
+Answer : 20
+

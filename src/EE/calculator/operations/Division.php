@@ -3,7 +3,7 @@
 
 namespace EE\calculator\operations;
 
-class Subtraction implements OperationInterface
+class Division implements OperationInterface
 {
     public function execute(array $numberArray) : float
     {
@@ -13,7 +13,7 @@ class Subtraction implements OperationInterface
             if ($i == 0) {
                 $sub = $numberArray[$i];
             } else {
-                $sub = $sub - $numberArray[$i];
+                $sub = $sub / $numberArray[$i];
             }
         }
         return $sub;
