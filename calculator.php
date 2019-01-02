@@ -23,5 +23,4 @@ $application->add($calculator);
 $application->setDefaultCommand($calculator->getName(),true); 
 
 // ... register commands
-
 $application->run();
