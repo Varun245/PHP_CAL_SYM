@@ -5,3 +5,5 @@
 [2018-12-31 17:33:35] Calaculator_Operations.INFO: {"Operation":"mul","Numbers":"4,5","Answer":"20\n"} [] []
 [2019-01-02 10:13:54] Calaculator_Operations.INFO: {"Operation":"mul","Numbers":"4,5","Answer":"20\n"} [] []
 [2019-01-02 10:17:22] Calaculator_Operations.INFO: {"Operation":"div","Numbers":"4,5","Answer":"0.8\n"} [] []
+[2019-01-02 10:42:32] Calaculator_Operations.INFO: {"Operation":"div","Numbers":"5,5","Answer":"1\n"} [] []
+[2019-01-02 10:42:38] Calaculator_Operations.INFO: {"Operation":"div","Numbers":"20,4","Answer":"5\n"} [] []
