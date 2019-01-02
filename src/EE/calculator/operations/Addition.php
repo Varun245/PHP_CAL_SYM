@@ -11,19 +11,3 @@ class Addition implements OperationInterface
     } 
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

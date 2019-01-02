@@ -6,8 +6,7 @@ namespace EE\calculator\operations;
 class Subtraction implements OperationInterface
 {
 
-    public function execute(array $numberArray) : float
-    {
+    public function execute(array $numberArray) : float{
 
         $count = count($numberArray);
         for ($i = 0; $i < $count; $i++) {
