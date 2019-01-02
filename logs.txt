@@ -34,3 +34,11 @@ Operation : mul
 Numbers : 4,5
 Answer : 20
 
+Operation : mul
+Numbers : 4,5
+Answer : 20
+
+Operation : div
+Numbers : 4,5
+Answer : 0.8
+

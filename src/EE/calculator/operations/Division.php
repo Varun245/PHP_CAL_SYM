@@ -11,11 +11,11 @@ class Division implements OperationInterface
         $count = count($numberArray);
         for ($i = 0; $i < $count; $i++) {
             if ($i == 0) {
-                $sub = $numberArray[$i];
+                $div = $numberArray[$i];
             } else {
-                $sub = $sub / $numberArray[$i];
+                $div = $div / $numberArray[$i];
             }
         }
-        return $sub;
+        return $div;
     }
 }

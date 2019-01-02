@@ -29,10 +29,7 @@ class CalculatorCommand extends Command
         $this
 
             ->setName('calculate')
-
             ->setDescription('Runs calculator')
-
-
             ->addArgument('operator', InputArgument::REQUIRED, 'Enter the operator')
             ->addArgument('numbers', InputArgument::REQUIRED, 'Enter the numbers');
 
@@ -51,32 +48,30 @@ class CalculatorCommand extends Command
             $logger = new Logger('Calaculator_Operations');
             $logger->pushHandler(new StreamHandler(__DIR__ . '/Loging.log', Logger::DEBUG));
             $logger->pushHandler(new FirePHPHandler());
-            
+
 
             $operation = OperationsFactory::getOperation($input->getArgument('operator'));
             $output->writeln($operation->execute($numberArray));
-           
 
-            $logArray = array("Operation"=>$operator, "Numbers"=>$numbers, "Answer"=>$operation->execute($numberArray).PHP_EOL);
+
+            $logArray = array("Operation" => $operator, "Numbers" => $numbers, "Answer" => $operation->execute($numberArray) . PHP_EOL);
             $JSON = json_encode($logArray);
-            
 
-           
+
+
             $text = "";
-            foreach($logArray as $key => $value)
-            {
-                $text .= $key." : ".$value."\n";
+            foreach ($logArray as $key => $value) {
+                $text .= $key . " : " . $value . "\n";
             }
-            $fileSystem->appendToFile('logs.txt',$text);
+            $fileSystem->appendToFile('logs.txt', $text);
             $logger->info($JSON);
-          
+
 
 
         } catch (CalculatorException $e) {
             $output->writeln($e->getMessage());
-        }catch (IOExceptionInterface $exception)
-        {
-            $output->writeln("An error occurred while creating your directory at ".$exception->getPath());
+        } catch (IOExceptionInterface $exception) {
+            $output->writeln("An error occurred while creating your directory at " . $exception->getPath());
         }
 
     }
