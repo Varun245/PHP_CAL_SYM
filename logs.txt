@@ -1,53 +1,27 @@
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : add
-Numbers : 4,5
-Answer : 9
-
-Operation : mul
-Numbers : 4,5
-Answer : 20
-
-Operation : mul
-Numbers : 4,5
-Answer : 20
-
-Operation : mul
-Numbers : 4,5
-Answer : 20
-
-Operation : mul
-Numbers : 4,5
-Answer : 20
-
-Operation : div
-Numbers : 4,5
-Answer : 0.8
-
-Operation : div
-Numbers : 5,5
-Answer : 1
-
-Operation : div
-Numbers : 20,4
-Answer : 5
-
-//////////
+add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ add 50,50 100
+ 

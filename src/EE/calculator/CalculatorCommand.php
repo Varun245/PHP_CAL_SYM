@@ -45,28 +45,32 @@ class CalculatorCommand extends Command
         $fileSystem = new Filesystem();
 
         try {
+
             $logger = new Logger('Calaculator_Operations');
             $logger->pushHandler(new StreamHandler(__DIR__ . '/Loging.log', Logger::DEBUG));
             $logger->pushHandler(new FirePHPHandler());
 
 
             $operation = OperationsFactory::getOperation($input->getArgument('operator'));
-            $output->writeln($operation->execute($numberArray));
+
+            if ($operation->isValid($numberArray)) {
+                $output->writeln($operation->execute($numberArray));
+
+                $logArray = array("Operation" => $operator, "Numbers" => $numbers, "Answer" => $operation->execute($numberArray) . PHP_EOL);
+                $JSON = json_encode($logArray);
 
 
-            $logArray = array("Operation" => $operator, "Numbers" => $numbers, "Answer" => $operation->execute($numberArray) . PHP_EOL);
-            $JSON = json_encode($logArray);
 
+                $text = "";
+                foreach ($logArray as $key => $value) {
+                    $text .= $value . " ";
+                }
+                $fileSystem->appendToFile('logs.txt', $text);
+                $logger->info($JSON);
 
-
-            $text = "";
-            foreach ($logArray as $key => $value) {
-                $text .= $key . " : " . $value . "\n";
+            } else {
+                echo "Please Enter valid Numeric values" . PHP_EOL;
             }
-            $fileSystem->appendToFile('logs.txt', $text);
-            $logger->info($JSON);
-
-
 
         } catch (CalculatorException $e) {
             $output->writeln($e->getMessage());
