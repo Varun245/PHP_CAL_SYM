@@ -1,6 +1,5 @@
 <?php
 
-
 namespace EE\calculator\operations;
 
 class Multiplication implements OperationInterface

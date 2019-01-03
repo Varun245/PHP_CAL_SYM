@@ -1,0 +1,6 @@
+add a,a 0
+ add 20,a 20
+ add 60,a 60
+ add 20,a 20
+ mul a,a, 0
+ 

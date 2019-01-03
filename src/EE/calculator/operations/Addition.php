@@ -1,6 +1,5 @@
 <?php
 
-
 namespace EE\calculator\operations;
 
 class Addition implements OperationInterface
@@ -27,4 +26,3 @@ class Addition implements OperationInterface
         return array_sum($numberArray);
     }
 }
-

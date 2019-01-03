@@ -17,7 +17,6 @@ use Monolog\Handler\FirePHPHandler;
 use Symfony\Component\Filesystem\Filesystem;
 use Symfony\Component\Filesystem\Exception\IOExceptionInterface;
 
-
 class CalculatorCommand extends Command
 {
    
@@ -46,9 +45,12 @@ class CalculatorCommand extends Command
 
         try {
 
-            $logger = new Logger('Calaculator_Operations');
+            $logger = new Logger('Calculator_Operations');
+            $logger2 = new Logger('Calculator_Operations_Errors');
             $logger->pushHandler(new StreamHandler(__DIR__ . '/Loging.log', Logger::DEBUG));
             $logger->pushHandler(new FirePHPHandler());
+            $logger2->pushHandler(new StreamHandler(__DIR__ . '/Loging_Errors.log', Logger::DEBUG));
+            $logger2->pushHandler(new FirePHPHandler());
 
 
             $operation = OperationsFactory::getOperation($input->getArgument('operator'));
@@ -59,8 +61,6 @@ class CalculatorCommand extends Command
                 $logArray = array("Operation" => $operator, "Numbers" => $numbers, "Answer" => $operation->execute($numberArray) . PHP_EOL);
                 $JSON = json_encode($logArray);
 
-
-
                 $text = "";
                 foreach ($logArray as $key => $value) {
                     $text .= $value . " ";
@@ -70,6 +70,17 @@ class CalculatorCommand extends Command
 
             } else {
                 echo "Please Enter valid Numeric values" . PHP_EOL;
+
+                $logArray = array("Operation" => $operator, "Numbers" => $numbers, "Answer" => $operation->execute($numberArray) . PHP_EOL);
+                $JSON = json_encode($logArray);
+
+                $text = "";
+                foreach ($logArray as $key => $value) {
+                    $text .= $value . " ";
+                }
+                $fileSystem->appendToFile('log          _Errors.txt', $text);
+                $logger2->info($JSON);
+
             }
 
         } catch (CalculatorException $e) {
@@ -80,4 +91,3 @@ class CalculatorCommand extends Command
 
     }
 }
-
